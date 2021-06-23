@@ -15,8 +15,8 @@ class Admin_bookController extends Controller
      */
     public function index()
     {
-        $books = Book::with('Loan')->get();
-        print_r($books);
+        $books = book::all();
+        return $books;
     }
 
     /**
