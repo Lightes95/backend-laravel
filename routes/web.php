@@ -12,9 +12,21 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
+Route::get('/admin', function () {
+    return view('admin.index');
+})->middleware(['auth']);
+
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('index');
 });
 
+Route::get('/admin/libri', function () {
+    return view('admin.libri');
+})->middleware(['auth']);
+
+
+require __DIR__.'/auth.php';
+
+Auth::routes();
 
